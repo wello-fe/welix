@@ -1,0 +1,3 @@
+{
+  "extends": "@@wello-team-front/tsconfig/base.json"
+}

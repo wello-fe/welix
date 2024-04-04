@@ -1,2 +1,3 @@
 # welix
-wello design system
+
+> 웰로 프론트엔드 디자인시스템입니다.
