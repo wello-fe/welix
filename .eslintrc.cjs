@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@next/next/recommended',
     'plugin:import/recommended',
+    'plugin:storybook/recommended',
   ],
   ignorePatterns: [
     'node_modules/',

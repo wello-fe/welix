@@ -25,5 +25,5 @@
     "**/.next": true
   },
   "workbench.iconTheme": "material-icon-theme",
-  "cSpell.words": ["clsx", "tailwindcss", "tseslint", "welix"]
+  "cSpell.words": ["autodocs", "clsx", "tailwindcss", "tseslint", "welix"]
 }
