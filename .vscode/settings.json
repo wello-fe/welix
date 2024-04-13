@@ -25,5 +25,9 @@
     "**/.next": true
   },
   "workbench.iconTheme": "material-icon-theme",
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
   "cSpell.words": ["autodocs", "clsx", "tailwindcss", "tseslint", "welix"]
 }

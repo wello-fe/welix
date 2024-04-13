@@ -22,18 +22,24 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    size: 'default',
+    theme: 'primary',
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    theme: 'secondary',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'lg',
+    size: 'large',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'sm',
+    size: 'small',
   },
 };
