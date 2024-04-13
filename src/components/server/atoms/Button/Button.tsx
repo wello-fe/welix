@@ -1,36 +1,32 @@
 import React from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
+import {
+  Button as RadixButton,
+  type ButtonProps as RadixButtonProps,
+} from '@radix-ui/themes';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import { cn } from '@/utils/class';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-md text-sm font-medium shadow ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center border rounded-lg text-sm font-medium transition ease-in-out duration-150 focus:outline-none focus:ring-2',
   {
     variants: {
-      variant: {
-        default:
-          'bg-primary text-primary-foreground shadow-md hover:bg-primary/90',
-        destructive:
-          'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-        outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+      theme: {
+        primary: 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-300',
         secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'shadow-none hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 shadow-none hover:underline',
+          'bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-300',
       },
       size: {
-        default: 'h-8 px-4 py-2',
-        sm: 'h-8 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
-        icon: 'h-8 w-8 p-0',
+        small: 'px-2 py-1 text-xs',
+        medium: 'px-4 py-2',
+        large: 'px-6 py-3 text-lg',
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      theme: 'primary',
+      size: 'medium',
     },
   },
 );
@@ -39,14 +35,24 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  color?: RadixButtonProps['color'];
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
+  (
+    {
+      className,
+      theme = 'primary',
+      size = 'medium',
+      asChild = false,
+      ...props
+    },
+    ref,
+  ) => {
+    const Comp = asChild ? Slot : RadixButton;
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ theme, size, className }))}
         ref={ref}
         {...props}
       />
