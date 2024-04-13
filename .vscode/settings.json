@@ -29,5 +29,12 @@
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
   ],
-  "cSpell.words": ["autodocs", "clsx", "tailwindcss", "tseslint", "welix"]
+  "cSpell.words": [
+    "autodocs",
+    "clsx",
+    "deepblue",
+    "tailwindcss",
+    "tseslint",
+    "welix"
+  ]
 }
