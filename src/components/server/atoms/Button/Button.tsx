@@ -14,19 +14,35 @@ const buttonVariants = cva(
   {
     variants: {
       theme: {
-        primary: 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-300',
-        secondary:
-          'bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-300',
+        'primary-fill':
+          'bg-deepblue-500 text-white hover:bg-deepblue-700 focus:ring-deepblue-500/50 font-pretendard text-lg font-bold leading-6 text-left',
+        'primary-line':
+          'border border-deepblue-500 text-deepblue-500 bg-transparent hover:bg-deepblue-50 focus:ring-deepblue-500/50 font-pretendard text-lg font-bold leading-6 text-left',
+        'primary-text':
+          'text-deepblue-500 bg-transparent hover:bg-deepblue-50 font-pretendard text-lg font-bold leading-6 text-left',
+        'sub-fill':
+          'bg-grayscale-300 text-grayscale-800 hover:bg-grayscale-300 focus:ring-grayscale-300/50 font-pretendard text-lg font-bold leading-6 text-left',
+        'sub-line':
+          'border border-grayscale-300 text-grayscale-900 bg-transparent hover:bg-grayscale-300 focus:ring-grayscale-300/50 font-pretendard text-lg font-bold leading-6 text-left',
+        'sub-text':
+          'text-grayscale-800 bg-transparent hover:bg-grayscale-200 font-pretendard text-lg font-bold leading-6 text-left',
       },
-      size: {
-        small: 'px-2 py-1 text-xs',
-        medium: 'px-4 py-2',
-        large: 'px-6 py-3 text-lg',
+      height: {
+        H56: 'h-14 py-4 px-6',
+        H48: 'h-12 py-3 px-6',
+        H40: 'h-10 py-3 px-4',
+        H32: 'h-8 py-2 px-4',
+        H26: 'h-6.5 py-1 px-2.5',
+      },
+      roundness: {
+        rectangle: 'rounded-lg',
+        capsule: 'rounded-full',
       },
     },
     defaultVariants: {
-      theme: 'primary',
-      size: 'medium',
+      theme: 'primary-fill',
+      height: 'H56',
+      roundness: 'rectangle',
     },
   },
 );
@@ -42,9 +58,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
-      theme = 'primary',
-      size = 'medium',
+      theme,
+      height,
+      roundness,
       asChild = false,
+      type = 'button',
       ...props
     },
     ref,
@@ -52,7 +70,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : RadixButton;
     return (
       <Comp
-        className={cn(buttonVariants({ theme, size, className }))}
+        type={type}
+        className={cn(buttonVariants({ theme, height, roundness, className }))}
         ref={ref}
         {...props}
       />
