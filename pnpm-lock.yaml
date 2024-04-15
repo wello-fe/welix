@@ -106,6 +106,9 @@ devDependencies:
   eslint-plugin-storybook:
     specifier: ^0.8.0
     version: 0.8.0(eslint@8.57.0)(typescript@5.4.5)
+  eslint-plugin-tailwindcss:
+    specifier: ^3.15.1
+    version: 3.15.1(tailwindcss@3.4.3)
   postcss:
     specifier: ^8.4.38
     version: 8.4.38
@@ -7330,6 +7333,17 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
+    dev: true
+
+  /eslint-plugin-tailwindcss@3.15.1(tailwindcss@3.4.3):
+    resolution: {integrity: sha512-4RXRMIaMG07C2TBEW1k0VM4+dDazz1kxcZhkK4zirvmHGZTA4jnlSO2kq5mamuSPi+Wo17dh2SlC8IyFBuCd7Q==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      tailwindcss: ^3.4.0
+    dependencies:
+      fast-glob: 3.3.2
+      postcss: 8.4.38
+      tailwindcss: 3.4.3
     dev: true
 
   /eslint-scope@5.1.1:
