@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { fn } from '@storybook/test';
 
-import { Button } from '..';
+import { Button } from './Button';
 
 const meta = {
   title: 'server/atoms/Button',
@@ -12,34 +12,76 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'color' },
+    theme: {
+      control: 'select',
+      options: [
+        'primary-fill',
+        'primary-line',
+        'primary-text',
+        'sub-fill',
+        'sub-line',
+        'sub-text',
+      ],
+    },
+    height: {
+      control: 'select',
+      options: ['H56', 'H48', 'H40', 'H32', 'H26'],
+    },
+    roundness: {
+      control: 'select',
+      options: ['rectangle', 'capsule'],
+    },
+    asChild: {
+      control: 'boolean',
+    },
+    disabled: {
+      control: 'boolean',
+    },
   },
-  args: { onClick: fn() },
+  args: {
+    onClick: fn(),
+    children: 'Button Text',
+    asChild: false,
+    disabled: false,
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+
+type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    theme: 'primary',
+    theme: 'primary-fill',
   },
 };
 
-export const Secondary: Story = {
+export const Line: Story = {
   args: {
-    theme: 'secondary',
+    theme: 'primary-line',
   },
 };
 
-export const Large: Story = {
+export const Text: Story = {
   args: {
-    size: 'large',
+    theme: 'primary-text',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    height: 'H26',
+  },
+};
+
+export const Rounded: Story = {
+  args: {
+    roundness: 'capsule',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
   },
 };
