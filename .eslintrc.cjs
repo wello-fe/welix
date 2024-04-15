@@ -9,6 +9,7 @@ module.exports = {
     'plugin:@next/next/recommended',
     'plugin:import/recommended',
     'plugin:storybook/recommended',
+    'plugin:tailwindcss/recommended',
   ],
   ignorePatterns: [
     'node_modules/',
