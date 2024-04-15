@@ -1,6 +1,7 @@
 import './global.css';
-
 import type { Metadata } from 'next';
+
+import { pretendard } from './fonts';
 
 export const metadata = {
   title: 'Welix',
@@ -9,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="ko">
+    <html className={pretendard.className} lang="ko">
       <body>{props.children}</body>
     </html>
   );
