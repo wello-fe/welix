@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { Checkbox } from '@/components/server';
+import { Checkbox, Indicator } from '@/components/server';
 
 export default function Home() {
   const [turned, setTurned] = useState(false);
@@ -17,6 +17,7 @@ export default function Home() {
       >
         dd
       </Checkbox>
+      <Indicator value={40} />
     </main>
   );
 }
