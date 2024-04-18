@@ -29,6 +29,7 @@
     "changeset:version": "changeset version && pnpm i --lockfile-only"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/themes": "^3.0.2",
     "class-variance-authority": "^0.7.0",
