@@ -11,6 +11,7 @@ const checkboxVariants = cva(
   [
     'rounded',
     'border',
+    'size-5',
     'flex items-center justify-center',
     'transition-colors duration-200 ease-in-out',
   ],
@@ -19,12 +20,6 @@ const checkboxVariants = cva(
       checked: {
         false: ['bg-white', 'border-grayscale-500'],
         true: ['bg-deepblue-500', 'border-none'],
-      },
-      size: {
-        s: 'size-4',
-        m: 'size-5',
-        l: 'size-6',
-        xl: 'size-7',
       },
       disabled: {
         true: [
@@ -37,7 +32,6 @@ const checkboxVariants = cva(
     },
     defaultVariants: {
       checked: false,
-      size: 'm',
       disabled: false,
     },
   },
@@ -50,7 +44,6 @@ interface CheckboxProps
 const Checkbox = ({
   className,
   checked,
-  size,
   disabled,
 
   children,
@@ -61,7 +54,7 @@ const Checkbox = ({
       <RadixCheckbox.Root
         id="checkbox"
         disabled={!!disabled}
-        className={cn(checkboxVariants({ checked, size, disabled, className }))}
+        className={cn(checkboxVariants({ checked, disabled, className }))}
         {...props}
       >
         <RadixCheckbox.Indicator>
