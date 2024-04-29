@@ -1,4 +1,4 @@
-import React from 'react';
+import { forwardRef } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 import {
@@ -54,7 +54,7 @@ export interface ButtonProps
   color?: RadixButtonProps['color'];
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,

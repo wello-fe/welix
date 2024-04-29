@@ -1,7 +1,5 @@
 import type { CheckboxProps as RadixCheckboxProps } from '@radix-ui/react-checkbox';
 
-import React from 'react';
-
 import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { cva, type VariantProps } from 'class-variance-authority';
 
