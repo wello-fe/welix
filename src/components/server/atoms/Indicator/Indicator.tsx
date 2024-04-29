@@ -18,4 +18,4 @@ const Indicator = ({ value }: IndicatorProps) => {
   );
 };
 
-export { Indicator };
+export { Indicator, type IndicatorProps };

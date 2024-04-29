@@ -77,4 +77,4 @@ const Checkbox = ({
   );
 };
 
-export { Checkbox, type CheckboxProps, checkboxVariants };
+export { Checkbox, type CheckboxProps };
