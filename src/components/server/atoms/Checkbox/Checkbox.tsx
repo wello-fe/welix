@@ -48,9 +48,8 @@ const Checkbox = ({
   ...props
 }: CheckboxProps) => {
   return (
-    <div className="flex items-center gap-1">
+    <label className="flex items-center gap-1">
       <RadixCheckbox.Root
-        id="checkbox"
         disabled={!!disabled}
         className={cn(checkboxVariants({ checked, disabled, className }))}
         {...props}
@@ -73,8 +72,8 @@ const Checkbox = ({
           </svg>
         </RadixCheckbox.Indicator>
       </RadixCheckbox.Root>
-      <label htmlFor="checkbox">{children}</label>
-    </div>
+      {children}
+    </label>
   );
 };
 
