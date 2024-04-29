@@ -1,6 +1,6 @@
 import * as Progress from '@radix-ui/react-progress';
 
-interface IndicatorProps {
+interface IndicatorProps extends Progress.ProgressProps {
   value: number;
 }
 
