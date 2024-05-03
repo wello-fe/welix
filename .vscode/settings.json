@@ -37,6 +37,8 @@
     "skyblue",
     "tailwindcss",
     "tseslint",
-    "welix"
+    "welix",
+    "xlarge",
+    "xsmall"
   ]
 }
